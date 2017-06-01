@@ -1,21 +1,26 @@
-html {
+body {
 	height: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	background: #6c5b7b;
+	background: #355c7d;
 	background: -webkit-linear-gradient(180deg, #6c5b7b, #355c7d);
 	background: -moz-linear-gradient(180deg, #6c5b7b, #355c7d);
 	background: -ms-linear-gradient(180deg, #6c5b7b, #355c7d);
 	background: -o-linear-gradient(180deg, #6c5b7b, #355c7d);
 	background: linear-gradient(180deg, #6c5b7b, #355c7d);
 }
+
+h1 {
+	font-size: 52px;
+	margin-bottom: 0px;
+}
 h1,h2 {
-	font-family: 'Righteous', cursive;
+	font-family: 'Limelight', cursive;
 	color: #efefef;
 }
-p, li, a {
+p,li,a,h3 {
 	font-family: 'Lato', sans-serif;
 	font-size: 90%;
 	color: #efefef;
@@ -23,9 +28,36 @@ p, li, a {
 .header {
 	text-align: center;
 }
-.abstract {
+.abstract, .menu {
 	margin: auto;
 	width: 75%;
+}
+.menu {
+	width: 50%;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+hr {
+	margin: auto;
+	width: 65%;
+}
+.menuItem {
+	text-decoration: none;
+	font-family: 'Limelight', cursive;
+	font-size: 20px;
+}
+a:link {
+	color:#c06c84;
+}
+a:visited {
+	color: #c06c84;
+}
+a:hover {
+	color: #f8b195;
+}
+a:active {
+	color: white;
 }
 
 
