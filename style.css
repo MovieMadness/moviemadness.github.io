@@ -93,6 +93,29 @@ a:hover {
 	font-size: 10px;
 }
 
+.downloads {
+	text-decoration: none;
+}
+
+.figure{
+	font-family: 'Lato', sans-serif;
+	color: white;
+	width: 80%;
+	margin: auto;
+	width: 75%;
+	padding: 15px;
+}
+
+td,tr{
+	border: 1px solid white;
+}
+
+.caption{
+	font-style: italic;
+	margin: auto;
+	width: 75%;
+
+}
 
 
 

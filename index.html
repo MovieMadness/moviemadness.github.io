@@ -50,29 +50,82 @@
 		<li>Nancy Yao</li>
 	</ul>
 	<p>Contact: <a href="mailto:qiangbi2019@u.northwestern.edu">qiangbi2019@u.northwestern.edu</a></p>
+	<h3>Synopsis</h3>
 	<div class="synopsis">
 	<p>Picture this - you’re an executive at the world’s leading movie production company. You’re in the conference room and have just heard hundreds of pitches for a new thriller. Your task? Choose the one that will be the most talked-about blockbuster of the summer. (No pressure.) You have all the information - from which actors will be cast to the size of the budget, and even a good grasp on potential critic ratings based on similar movies. Now what?</p>
 	<p>Considering that screenwriters, directors, and film companies need to stay ahead of the trends in the movie business, we set out to find a way to predict the box office revenue of movies in the United States. We focused on attributes such as the production budget, popularity of actors and directors, and reviews. We classified gross revenue in four categories, based on the distribution of our data. We used the IMDB 5000 dataset from Kaggle, choosing from its 28 attributes to find the ones most indicative of movie success. </p>
-	<p>We tried a variety of machine learning algorithms: decision trees, k-nearest neighbor, multilayer perceptrons, Bayes Net, and linear regression. We compared each of these to ZeroR and iterated on different combinations of our data to find the optimal learner for our task. </p>
-	<p>Results....</p>
+</div>
+	<h3>Results</h3>
+	<div class = "synopsis">
+	<p>We tried a variety of machine learning algorithms: decision trees, k-nearest neighbor, multilayer perceptrons, Bayes Net, and linear regression. We compared each of these to ZeroR and iterated on different combinations of our data to find the optimal learner for our task. This took place over two phases: the first with our chosen features from the original Kaggle data set and the second using some of our own data that we scraped from actor and director Facebook pages. We found that Random Forest performed the best, with 82.5766% testing accuracy, a 30.2% increase from our ZeroR baseline. This was due to the algorithm’s ability to prune on unnecessary attributes, as some features did not always indicate movie success. The most important attributes we found were movie budget and IMDB scores, as these could help predict the revenue a movie would make relatively reliably.</p>
+
 	</div>
-	<div class="abstract-image"></div>
+	<div class="abstract-figure">
+		<table class = "figure">
+  <tr>
+		<th>
+    <th>Original Training Data</th>
+    <th>New Training Data</th>
+    <th>New Testing Data</th>
+  </tr>
+  <tr>
+    <td>ZeroR</td>
+    <td>52.07%</td>
+    <td>51.99%</td>
+		<td>52.27%</td>
+  </tr>
+  <tr>
+    <td>Random Forest</td>
+		<td>82.40%</td>
+		<td>80.66%</td>
+		<td>82.58%</td>
+  </tr>
+	<tr>
+    <td>Bayes Net</td>
+		<td>76.28%</td>
+		<td>75.95%</td>
+		<td>76.35%</td>
+  </tr>
+	<tr>
+    <td>Multilayer Perceptron</td>
+		<td>77.80%</td>
+		<td>79.08%</td>
+		<td>78.25%</td>
+  </tr>
+	<tr>
+    <td>Classification Via Regression</td>
+		<td>81.92%</td>
+		<td>80.80%</td>
+		<td>80.68%</td>
+  </tr>
+	<tr>
+    <td>K-Nearest Neighbor</td>
+		<td>71.64%</td>
+		<td>70.47%</td>
+		<td>72.44%</td>
+  </tr>
+
+</table>
+
+	</div>
+
+<p class="caption">Figure: Results obtained for different classifiers and altered dataset (where “new data” indicates data including Facebook page likes)</p>
 </div>
 
 <br>
 <div id="downloads" class="mainclass">
 	<a class="totop" href="#content">Back to top</a>
 	<h2>Downloads</h2>
-	<a class="downloads">Final Report Write-Up</a>
-	<br><br><br>
+	<a class="downloads" href="files/FinalizedReport.pdf">Final Report Write-Up</a>
+	<br><br>
 	<a class="downloads" href="dataset/train_beforelikes.csv">Original Training Data</a>
-	<br><br><br>
+	<br><br>
 	<a class="downloads" href="dataset/train_afterlikes.csv">New Training Data (70%)</a>
-	<br><br><br>
+	<br><br>
 	<a class="downloads" href="dataset/test_afterlikes.csv">New Testing Data (30%)</a>
-	<br><br><br>
+	<br><br>
 	<a class="downloads">Facebook Likes Scraper</a>
-	<br><br><br>
+	<br><br>
 
 </div>
 </main>
