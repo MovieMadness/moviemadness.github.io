@@ -9,27 +9,36 @@
 	<link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
 </head>
 
-<body>
+<body><div id="content">
 <main>
 <!--Stars-->
 <div id="stars1"></div>
 <div id="stars2"></div>
 <div id="stars3"></div>
 <div class="header">
-	<h1>Movie Madness</h1>	
+	<h1>MOVIE MADNESS</h1>	
 </div>
 <br>
 <br>
 <div class="menu">
 	<a class="menuItem" href=#abstract>Abstract</a>
-	<a class="menuItem" href=#intro>Intro</a>
-	<a class="menuItem" href=#learners>Learners</a>
+	<a class="menuItem" href=#task>Task</a>
+	<div class="dropdown">
+  		<a class="menuItem">Investigation</a>
+  		<div class="dropdown-content">
+		    <a href="#knn">K-Nearest Neighbor</a>
+		    <a href="#dtree">Decision Tree</a>
+		    <a href="#nn">Multilayer Perceptron</a>
+		    <a href="#lr">Linear Regression</a>
+		    <a href="#bayes">Bayes Net</a>
+  		</div>
+	</div>
 	<a class="menuItem" href=#results>Results</a>
 	<a class="menuItem" href=#downloads>Downloads</a>
 </div>
 <hr>
 <br>
-<div class="abstract">
+<div id="abstract" class="mainclass">
 	<h2>Abstract</h2>
 	<p>Northwestern University EECS 349, Spring 2017</p>
 	<p>Members:</p>
@@ -45,8 +54,68 @@
 	<p>Picture this - you’re an executive at the world’s leading movie production company. You’re in the conference room and have just heard hundreds of pitches for a new thriller. Your task? Choose the one that will be the most talked-about blockbuster of the summer. (No pressure.) You have all the information - from which actors will be cast to the size of the budget, and even a good grasp on potential critic ratings based on similar movies. Now what?</p>
 	<p>Considering that screenwriters, directors, and film companies need to stay ahead of the trends in the movie business, we set out to find a way to predict the box office revenue of movies in the United States. We focused on attributes such as the production budget, popularity of actors and directors, and reviews. We classified gross revenue in four categories, based on the distribution of our data. We used the IMDB 5000 dataset from Kaggle, choosing from its 28 attributes to find the ones most indicative of movie success. </p>
 	<p>We tried a variety of machine learning algorithms: decision trees, k-nearest neighbor, multilayer perceptrons, Bayes Net, and linear regression. We compared each of these to ZeroR and iterated on different combinations of our data to find the optimal learner for our task. </p>
+	<p>Results....</p>
 	</div>
+	<div class="abstract-image"></div>
+</div>
+<br>
+<br>
+<div id="report" class="mainclass">
+	<a class="totop" href="#content">Back to top</a>
+	<div id="task">
+		<h2>THE TASK</h2>
+		<div id="task">
+			<h3>Task</h3>
+			<p>Our task is to predict the gross box office revenue of a movie, given attributes such as popularity of actors based on number of Facebook likes and total movie budget. This task is important because it will allow us to figure out what features will make or break a movie’s success.</p>
+		</div>
+		<div id="dataset">
+			<h3>Dataset</h3>
+			<p>We utilized the dataset <a href="https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset">IMDB 5000</a> from Kaggle. There is information in the original dataset for 5000 movies. The attributes include duration, budget, face number (number of faces in movie poster), title year, IMDB score, and aspect ratio. The dataset also includes information about the directors and lead actors, but instead of using their names as categorical attributes, we decided to use their Facebook page likes so that we could convert the attributes into numerical values.</p>
+			<p>In deciding which examples and features to consider, we chose the features that seemed most relevant (see “Selecting Features” section below) and eliminated those such as face number, which seemed arbitrary. We also limited our examples to those created in the United States, for reasons clarified in the section below.</p>
+		</div>
+		<div id="features">
+			<h3>Selecting Features</h3>
+			<p>Our original dataset included many attributes that we did not find useful for predicting box office revenue, so we pre-processed much of the data to get our finalized training and test sets. Part of this was due to inconsistencies in the original dataset. For example, not all of the gross revenue was expressed in U.S. dollars, posing a difficulty because various countries’ exchange rates to dollars fluctuate differently, based on the year. For this reason, we narrowed our scope to predicting the box office revenue among movies produced in the U.S., rather than all of the examples in the original dataset.</p>
+			<p>The celebrities associated with any given movie tend to greatly impact its popularity, as in the case of “bankable stars” whose presence in a movie is supposedly able to guarantee box office success. In order to gauge the effect that the names associated with a movie had on its revenue, we needed an accurate measure of the popularity and recognizability of the lead actors and director. We scraped data from Facebook on the number of likes on each individual’s page. We chose to do this because we realized that the Facebook likes initially included in our data set had a lot of missing values, and weren’t the likes on the celebrities’ actual Facebook pages, but those on their IMDB profile pages.</p>
+			<p>There is a possibility of error in our approach for scraping the Facebook likes. Our method searches for the given name and takes in the likes for the first page that comes up in the search results. We assume that this is accurate for most searches, as the top result would likely be the official celebrity page. However, for lesser known directors and actors, this might obtain the wrong page’s number of likes if the top result is someone else with the same name.</p>
+		</div>
+		<div id="revenue">
+			<h3>Classifying Revenue</h3>
+			<p>We decided to divide the gross revenue into a binary classification, where the threshold between classes was $30,000,000. In future work, to get a more accurate classification of revenue, we would try splitting the revenue into more classes, trying different combinations of thresholds to maximize accuracy.</p>
+			<p>Due to the distribution of our dataset, the movie revenue values were distributed non-linearly. Movies tended to either earn millions of dollars or only a few thousand. We attempted to normalize the exponential nature of these values by classifying based on the log of our revenue attribute. However, we found that this decreased our accuracy across all learners, so we decided to continue using the raw revenue values.</p>
+		</div>
+	</div>
+	<br>
+	<a class="totop" href="#content">Back to top</a>
+	<div id="investigation">
+		<h2>THE INVESTIGATION</h2>
+		<div id="knn">
+			<h3>K-Nearest Neighbor</h3>
+		</div>
+		<div id="dtree">
+			<h3>Decision Tree</h3>
+		</div>
+		<div id="nn">
+			<h3>Multilayer Perceptron</h3>
+		</div>
+		<div id="lr">
+			<h3>Linear Regression</h3>
+		</div>
+		<div id="bayes">
+			<h3>Bayes Net</h3>
+		</div>
+	</div>
+	<br>
+	<a class="totop" href="#content">Back to top</a>
+	<div id="results">
+		<h2>THE RESULTS</h2>
+	</div>
+</div>
+<br>
+<br>
+<div id="downloads">
 
 </div>
 </main>
+<div>
 </body>

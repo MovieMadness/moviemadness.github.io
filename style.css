@@ -16,11 +16,11 @@ h1 {
 	font-size: 56px;
 	margin-bottom: 0px;
 }
-h1,h2 {
+h1,h2,h3 {
 	font-family: 'Limelight', cursive;
 	color: white;
 }
-p,li,a,h3 {
+p,li,a {
 	font-family: 'Lato', sans-serif;
 	font-size: 90%;
 	color: #dfd6ff;
@@ -28,7 +28,7 @@ p,li,a,h3 {
 .header {
 	text-align: center;
 }
-.abstract, .menu {
+.mainclass, .menu {
 	margin: auto;
 	width: 75%;
 }
@@ -43,22 +43,57 @@ hr {
 	width: 65%;
 }
 .menuItem {
+	color: white;
 	text-decoration: none;
 	font-family: 'Limelight', cursive;
 	font-size: 24px;
 }
-a:link {
-	color:white;
+
+/* Dropdown Button - Investigation*/
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
-a:visited {
-	color:white;
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #110047;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.totop {
+	font-size: 10px;
+}
+.menuItem:link, .menuItem:visited, .menuItem:active {
+	color: white;
+}
+.menuItem:hover {
+	color: yellow;
+}
+
+a:link, a:visited, a:active {
+	color:yellow;
 }
 a:hover {
-	color:#fffa00;
-}
-a:active {
 	color:white;
 }
+
 
 
 
