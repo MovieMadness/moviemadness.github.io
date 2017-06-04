@@ -11,7 +11,6 @@ body {
 	background: -o-linear-gradient(180deg, #2800a3, #110047);
 	background: linear-gradient(180deg, #2800a3, #110047);
 }
-
 h1 {
 	font-size: 56px;
 	margin-bottom: 0px;
@@ -47,9 +46,9 @@ hr {
 	text-decoration: none;
 	font-family: 'Limelight', cursive;
 	font-size: 24px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-
-/* Dropdown Button - Investigation*/
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
@@ -68,6 +67,18 @@ hr {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.menuItem:link, .menuItem:visited, .menuItem:active {
+	color: white;
+}
+.menuItem:hover {
+	color: yellow;
+}
+a, a:link, a:visited, a:active {
+	color:yellow;
+}
+a:hover {
+	color:white;
+}
 /* Links inside the dropdown */
 .dropdown-content a {
     color: white;
@@ -75,26 +86,12 @@ hr {
     text-decoration: none;
     display: block;
 }
-
-
+.dropdown-content a:hover {
+	color:yellow;
+}
 .totop {
 	font-size: 10px;
 }
-.menuItem:link, .menuItem:visited, .menuItem:active {
-	color: white;
-}
-.menuItem:hover {
-	color: yellow;
-}
-
-a:link, a:visited, a:active {
-	color:yellow;
-}
-a:hover {
-	color:white;
-}
-
-
 
 
 

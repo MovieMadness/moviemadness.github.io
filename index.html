@@ -20,7 +20,7 @@
 </div>
 <br>
 <br>
-<div class="menu">
+<!--<div class="menu">
 	<a class="menuItem" href=#abstract>Abstract</a>
 	<a class="menuItem" href=#task>Task</a>
 	<div class="dropdown">
@@ -35,7 +35,7 @@
 	</div>
 	<a class="menuItem" href=#results>Results</a>
 	<a class="menuItem" href=#downloads>Downloads</a>
-</div>
+</div>-->
 <hr>
 <br>
 <div id="abstract" class="mainclass">
@@ -58,63 +58,19 @@
 	</div>
 	<div class="abstract-image"></div>
 </div>
-<br>
-<br>
-<div id="report" class="mainclass">
-	<a class="totop" href="#content">Back to top</a>
-	<div id="task">
-		<h2>THE TASK</h2>
-		<div id="task">
-			<h3>Task</h3>
-			<p>Our task is to predict the gross box office revenue of a movie, given attributes such as popularity of actors based on number of Facebook likes and total movie budget. This task is important because it will allow us to figure out what features will make or break a movie’s success.</p>
-		</div>
-		<div id="dataset">
-			<h3>Dataset</h3>
-			<p>We utilized the dataset <a href="https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset">IMDB 5000</a> from Kaggle. There is information in the original dataset for 5000 movies. The attributes include duration, budget, face number (number of faces in movie poster), title year, IMDB score, and aspect ratio. The dataset also includes information about the directors and lead actors, but instead of using their names as categorical attributes, we decided to use their Facebook page likes so that we could convert the attributes into numerical values.</p>
-			<p>In deciding which examples and features to consider, we chose the features that seemed most relevant (see “Selecting Features” section below) and eliminated those such as face number, which seemed arbitrary. We also limited our examples to those created in the United States, for reasons clarified in the section below.</p>
-		</div>
-		<div id="features">
-			<h3>Selecting Features</h3>
-			<p>Our original dataset included many attributes that we did not find useful for predicting box office revenue, so we pre-processed much of the data to get our finalized training and test sets. Part of this was due to inconsistencies in the original dataset. For example, not all of the gross revenue was expressed in U.S. dollars, posing a difficulty because various countries’ exchange rates to dollars fluctuate differently, based on the year. For this reason, we narrowed our scope to predicting the box office revenue among movies produced in the U.S., rather than all of the examples in the original dataset.</p>
-			<p>The celebrities associated with any given movie tend to greatly impact its popularity, as in the case of “bankable stars” whose presence in a movie is supposedly able to guarantee box office success. In order to gauge the effect that the names associated with a movie had on its revenue, we needed an accurate measure of the popularity and recognizability of the lead actors and director. We scraped data from Facebook on the number of likes on each individual’s page. We chose to do this because we realized that the Facebook likes initially included in our data set had a lot of missing values, and weren’t the likes on the celebrities’ actual Facebook pages, but those on their IMDB profile pages.</p>
-			<p>There is a possibility of error in our approach for scraping the Facebook likes. Our method searches for the given name and takes in the likes for the first page that comes up in the search results. We assume that this is accurate for most searches, as the top result would likely be the official celebrity page. However, for lesser known directors and actors, this might obtain the wrong page’s number of likes if the top result is someone else with the same name.</p>
-		</div>
-		<div id="revenue">
-			<h3>Classifying Revenue</h3>
-			<p>We decided to divide the gross revenue into a binary classification, where the threshold between classes was $30,000,000. In future work, to get a more accurate classification of revenue, we would try splitting the revenue into more classes, trying different combinations of thresholds to maximize accuracy.</p>
-			<p>Due to the distribution of our dataset, the movie revenue values were distributed non-linearly. Movies tended to either earn millions of dollars or only a few thousand. We attempted to normalize the exponential nature of these values by classifying based on the log of our revenue attribute. However, we found that this decreased our accuracy across all learners, so we decided to continue using the raw revenue values.</p>
-		</div>
-	</div>
-	<br>
-	<a class="totop" href="#content">Back to top</a>
-	<div id="investigation">
-		<h2>THE INVESTIGATION</h2>
-		<div id="knn">
-			<h3>K-Nearest Neighbor</h3>
-		</div>
-		<div id="dtree">
-			<h3>Decision Tree</h3>
-		</div>
-		<div id="nn">
-			<h3>Multilayer Perceptron</h3>
-		</div>
-		<div id="lr">
-			<h3>Linear Regression</h3>
-		</div>
-		<div id="bayes">
-			<h3>Bayes Net</h3>
-		</div>
-	</div>
-	<br>
-	<a class="totop" href="#content">Back to top</a>
-	<div id="results">
-		<h2>THE RESULTS</h2>
-	</div>
-</div>
-<br>
-<br>
-<div id="downloads">
 
+<br>
+<div id="downloads" class="mainclass">
+	<a class="totop" href="#content">Back to top</a>
+	<h2>Downloads</h2>
+	<a class="downloads" href="dataset/train_beforelikes.csv">Training data with old Facebook likes</a>
+	<br><br><br>
+	<a class="downloads" href="dataset/train_afterlikes.csv">Training data with new Facebook likes (30%)</a>
+	<br><br><br>
+	<a class="downloads" href="dataset/test_afterlikes.csv">Test data with old Facebook likes (70%)</a>
+	<br><br><br>
+	<a class="downloads">Script for scraping Facebook likes???</a>
+	<br><br><br>
 </div>
 </main>
 <div>
