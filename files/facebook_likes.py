@@ -1,3 +1,9 @@
+'''
+EECS 349 Project
+Script used for obtaining the number of likes of directors and actors on facebook pages to use as a feature instead of their names. 
+'''
+
+
 import json
 import csv
 import requests
